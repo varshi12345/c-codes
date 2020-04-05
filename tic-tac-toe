@@ -1,1 +1,189 @@
+#include<stdio.h>
+void print();
+int  check();
+char a[3][3];
+void main()
+{
+	int i,j,m,n,k;
+	char player1[10],player2[10],x,o,c;
+	printf("\nEnter player1 name\n");
+	scanf("%s",player1);
+	printf("\nEnter player2 name\n");
+	scanf("%s",player2);
+	printf("\n TIC TAC TOE\n The player should give the below given positions\n");
+	for(i=1;i<=3;i++)
+	{
+		for(j=1;j<=3;j++)
+		{
+			a[i][j]='-';
+			printf("%d%d\t",i,j);
+		}
+		printf("\n");
+	}
+	print();
+	printf("\n GAME STARTS NOW\n");
+	for(i=1;i<=9;i++)
+	{
+		if(i%2==0)
+		{
+			do
+			{
+		printf("\n%s\nEnter your positions\n",player2);
+		scanf("%d%d",&m,&n);
+	}while(a[m][n]!='-');
+	a[m][n]='o';
+	print();		
+		}
+		else
+		{
+			do
+			{
+				printf("\n%s\nEnter your positions\n",player1);
+                scanf("%d%d",&m,&n);
+        }while(a[m][n]!='-');
+			a[m][n]='x';
+			print();
+                }
+	       k=check();
+	       if(k==1)
+	       {
+		       printf("\n%s IS WINNER\n",player1);
+		       break;
+	       }
+	       else if(k==0)
+	       {
+		       printf("\n%s IS WINNER\n",player2);
+		       break;
+	       }
+		       //	if(i>20)
+		//	{
+		//				  for(j=1;j<=3;j++)
+                  //              {
+                    //                    if(((a[j][1]=='c')&&(a[j][2]=='c')&&(a[j][3]=='c'))||((a[1][j]=='c')&&(a[2][j]=='c')&&(a[3][j]=='c'))||((a[1][1]=='c')&&(a[2][2]=='c')&&(a[3][3]=='c'))||((a[1][3]=='c')&&(a[2][2]=='c')&&(a[3][1]=='c')))
+                      //                  {
+                        //                        switch('c')
+                          //                      {
+                            //                            case('x'):printf("\nGAME OVER\nPLAYER1 IS THE WINNER\n");
+                             //                                     break;
+                               //                         case('o'):printf("\nGAME OVER\nPLAYER2 IS THE WINNER\n");
+                                 //                                 break;
+                                   //            }
+                                     //   }
+                                       // break;
+                               // }
+		//	}
+			if(i==9)
+			{
+				printf("\nIT'S A DRAW\n");
+			}
+
+
+	}
+
+}
+void print()
+{
+	int i,j;
+	printf("\n THE PRESENT STATUS IS \n");
+	for(i=1;i<=3;i++)
+	{
+		for(j=1;j<=3;j++)
+		{
+			printf("%c\t",a[i][j]);
+		}
+		printf("\n");
+	}
+}
+int  check()
+{
+	if((a[1][1]==a[1][2])&&(a[1][2]==a[1][3]))
+	{
+		if(a[1][1]=='x')
+		{
+			return 1;
+		}
+		else if(a[1][1]=='o')
+		{
+			return 0;
+		}
+	}
+	if((a[2][1]==a[2][2])&&(a[2][2]==a[2][3]))
+        {       
+                if(a[2][1]=='x')
+                {
+                        return 1;
+                }
+                else if(a[2][1]=='o')
+                {
+                        return 0;
+                }
+        }
+if((a[3][1]==a[3][2])&&(a[3][2]==a[3][3]))
+        {       
+                if(a[3][1]=='x')
+                {
+                        return 1;
+                }
+                else if(a[3][1]=='o')
+                {
+                        return 0;
+                }
+        }
+if((a[1][1]==a[2][1])&&(a[2][1]==a[3][1]))
+        {       
+                if(a[1][1]=='x')
+                {
+                        return 1;
+                }
+                else if(a[1][1]=='o')
+                {
+                        return 0;
+                }
+        }
+if((a[1][2]==a[2][2])&&(a[2][2]==a[3][2]))
+        {       
+                if(a[1][2]=='x')
+                {
+                        return 1;
+                }
+                else if(a[1][2]=='o')
+                {
+                        return 0;
+                }
+        }
+if((a[1][3]==a[2][3])&&(a[2][3]==a[3][3]))
+        {       
+                if(a[1][3]=='x')
+                {
+                        return 1;
+                }
+                else if(a[1][3]=='o')
+                {
+                        return 0;
+                }
+        }
+if((a[1][1]==a[2][2])&&(a[2][2]==a[3][3]))
+        {       
+                if(a[1][1]=='x')
+                {
+                        return 1;
+                }
+                else if(a[1][1]=='o')
+                {
+                        return 0;
+                }
+        }
+if((a[1][3]==a[2][2])&&(a[2][2]==a[3][1]))
+        {       
+                if(a[1][3]=='x')
+                {
+                        return 1;
+                }
+                else if(a[1][3]=='o')
+                {
+                        return 0;
+                }
+        }
+}
+
 
