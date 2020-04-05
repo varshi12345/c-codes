@@ -1,1 +1,66 @@
 
+#include<stdio.h>
+void main()
+{
+	int a[8],i,x,y,v,w,b,c,d; 
+printf("\nEnter the date\n");
+scanf("%d",&x);
+printf("\n Enter the month\n");
+scanf("%d",&y);
+printf("\nEnter the year\n");
+scanf("%d%d",&v,&w);
+switch(v)
+{
+	case(15):
+	case(19):b=1;
+		 break;
+	case(16):
+	case(20):b=6;
+		 break;
+	case(17):b=4;
+		 break;
+	case(18):b=2;
+		 break;
+}
+switch(y)
+{
+	case(1):
+	case(10):c=1;
+		 break;
+	case(2):
+	case(3):
+	case(11):c=4;
+		 break;
+	case(4):
+	case(7):c=0;
+		break;
+	case(9):
+	case(12):c=6;
+		 break;
+	case(5):c=2;
+		break;
+	case(6):c=5;
+		break;
+	case(8):c=3;
+		break;
+}
+	d=((x+c+b+w+(w/4))%7);
+switch(d)
+{
+	case(1):printf("\nSUNDAY\n");
+		break;
+	case(2):printf("\nMONDAY\n");
+                break;
+	case(3):printf("\nTUESDAY\n");
+                break;
+	case(4):printf("\nWEDNESDAY\n");
+                break;
+	case(5):printf("\nTHURSDAY\n");
+                break;
+	case(6):printf("\nFRIDAY\n");
+                break;
+	case(0):printf("\nSATURDAY\n");
+                break;
+}
+}
+
